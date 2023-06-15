@@ -4,7 +4,7 @@ public class Rato {
     private int mapaGerado[][];
 
     //construtor
-    public Fulano(Labirinto mapa){
+    public Rato(Labirinto mapa){
         passo = 4;
         mapaGerado = mapa.getMapa();
 
