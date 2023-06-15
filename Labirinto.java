@@ -42,3 +42,29 @@ public class Labirinto {
         gerarParedes();
     }
 }
+
+private void randomizar(){
+        x = rand.nextInt(20);
+        y = rand.nextInt(20);
+    }
+
+    private boolean gerarParedes(){
+        randomizar();
+        if (nParedes > 120) {
+            return true;
+        }else if(mapa[x][y] == parede){
+            gerarParedes();
+        }else if(mapa[x][y] == saida){
+            gerarParedes();
+        }else if(mapa[x][y] == entrada){
+            gerarParedes();
+        }else{
+            mapa[x][y] = parede;
+            nParedes++;
+            if (gerarParedes()) {
+                return true;
+            }
+        }
+
+        return true;
+    }
