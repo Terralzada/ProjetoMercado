@@ -3,7 +3,7 @@ public class Labirinto {
 
     //Atributos
     private int parede , entrada, saida;
-    private int x, y, nParedes, xFulano, yFulano;
+    private int x, y, nParedes, xRato, yRato;
     private int mapa[][];
     private Random rand;
 
@@ -15,8 +15,8 @@ public class Labirinto {
         rand = new Random();
         x = 0;
         y = 0;
-        xFulano = 0;
-        yFulano = 0;
+        xRato = 0;
+        yRato = 0;
         nParedes = 0;
         criarMapa();
     }
@@ -35,8 +35,8 @@ public class Labirinto {
         }
 
         mapa[x][y] = entrada;
-        xFulano = x;
-        yFulano = y;
+        xRato = x;
+        yRato = y;
 
         //definicao das paredes (100)
         gerarParedes();
@@ -89,12 +89,12 @@ public class Labirinto {
         }
     }
 
-    public int getxFulano() {
-        return xFulano;
+    public int getxRato() {
+        return xRato;
     }
 
-    public int getyFulano() {
-        return yFulano;
+    public int getyRato() {
+        return yRato;
     }
 
     public int[][] getMapa() {
