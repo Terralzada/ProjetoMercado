@@ -33,4 +33,12 @@ public class Labirinto {
         while(mapa[x][y] == saida){
             randomizar();
         }
+
+        mapa[x][y] = entrada;
+        xFulano = x;
+        yFulano = y;
+
+        //definicao das paredes (100)
+        gerarParedes();
+    }
 }
