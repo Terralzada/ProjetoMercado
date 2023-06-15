@@ -68,4 +68,36 @@ public class Labirinto {
 
         return true;
     }
+
+    private void gerarCaminho(){
+        mapa = new int[20][20];
+
+        for (int colunas = 0; colunas < 20; colunas++) {
+            for (int linhas = 0; linhas < 20; linhas++) {
+                mapa[colunas][linhas] = 0;
+
+            }
+        }
+    }
+
+    public void mostrarMapa(){
+        for (int colunas = 0; colunas < 20; colunas++) {
+            for (int linhas = 0; linhas < 20; linhas++) {
+                System.out.print(mapa[colunas][linhas] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public int getxFulano() {
+        return xFulano;
+    }
+
+    public int getyFulano() {
+        return yFulano;
+    }
+
+    public int[][] getMapa() {
+        return mapa;
+    }
 }

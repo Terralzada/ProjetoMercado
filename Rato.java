@@ -4,7 +4,7 @@ public class Rato {
     private int mapaGerado[][];
 
     //construtor
-    public Fulano(Labirinto mapa){
+    public Rato(Labirinto mapa){
         passo = 4;
         mapaGerado = mapa.getMapa();
 
@@ -41,6 +41,14 @@ public class Rato {
         }
     }
 
+    public void mostrarCaminho(){
+        for (int colunas = 0; colunas < 20; colunas++) {
+            for (int linhas = 0; linhas < 20; linhas++) {
+                System.out.print(mapaGerado[colunas][linhas] + " ");
+            }
+            System.out.println();
+        }
+    }
 
 
 }
