@@ -1,3 +1,5 @@
+package Source;
+
 public class Rato {
   //atributos
     private final int passo;

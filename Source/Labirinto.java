@@ -1,3 +1,5 @@
+package Source;
+
 import java.util.Random;
 public class Labirinto {
 
@@ -21,7 +23,7 @@ public class Labirinto {
         criarMapa();
     }
 
-    private void criarMapa(){
+    public void criarMapa(){
         //definicao de caminho
         gerarCaminho();
 
@@ -43,12 +45,12 @@ public class Labirinto {
     }
 
 
-    private void randomizar(){
+    public void randomizar(){
         x = rand.nextInt(20);
         y = rand.nextInt(20);
     }
 
-    private boolean gerarParedes(){
+    public boolean gerarParedes(){
         randomizar();
         if (nParedes > 120) {
             return true;
@@ -69,7 +71,7 @@ public class Labirinto {
         return true;
     }
 
-    private void gerarCaminho(){
+    public void gerarCaminho(){
         mapa = new int[20][20];
 
         for (int colunas = 0; colunas < 20; colunas++) {
@@ -100,4 +102,10 @@ public class Labirinto {
     public int[][] getMapa() {
         return mapa;
     }
+
+    public int getX(){ return x;}
+
+    public int getY(){ return y;}
+
+
 }
