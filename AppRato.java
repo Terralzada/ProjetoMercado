@@ -19,6 +19,6 @@ public class AppRato {
 
         System.out.println();
         System.out.println("Caminho percorrido:");
-        ciclano.mostrarCaminho();
+        mickey.mostrarCaminho();
     }
 }

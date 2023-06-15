@@ -1,11 +1,11 @@
 public class Rato {
   //atributos
-    private final int passo;
-    private int mapaGerado[][];
+    private final String passo;
+    private String mapaGerado[][];
 
     //construtor
     public Rato(Labirinto mapa){
-        passo = 4;
+        passo = ".";
         mapaGerado = mapa.getMapa();
 
     }
@@ -14,9 +14,9 @@ public class Rato {
     public boolean acharSaida(char deOndeVeio, int x, int y){
         if (x < 0 || x > 19 || y < 0 || y > 19) {
             return false;
-        }else if(mapaGerado[x][y] == 5){
+        }else if(mapaGerado[x][y] == "#"){
             return true;
-        }else if(mapaGerado[x][y] == 1){
+        }else if(mapaGerado[x][y] == "|"){
             return false;
         }else if(mapaGerado[x][y] == passo){
             return false;
@@ -34,7 +34,7 @@ public class Rato {
             }else if ((deOndeVeio != 'e') && acharSaida('d', x, y-1)) {
                 return true;
             }else{
-                mapaGerado[x][y] = 0;
+                mapaGerado[x][y] = " ";
                 return false;
             }
             
