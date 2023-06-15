@@ -41,9 +41,9 @@ public class Labirinto {
         //definicao das paredes (100)
         gerarParedes();
     }
-}
 
-private void randomizar(){
+
+    private void randomizar(){
         x = rand.nextInt(20);
         y = rand.nextInt(20);
     }
@@ -68,3 +68,4 @@ private void randomizar(){
 
         return true;
     }
+}
