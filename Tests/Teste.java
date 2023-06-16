@@ -2,7 +2,6 @@ package Tests;
 
 import Source.*;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -39,9 +38,9 @@ public class Teste {
     @Test
     public void testeEncontrarSaida() {
         Labirinto mapa = new Labirinto();
+        mapa.criarMapa();
         Rato rato = new Rato(mapa);
         assertTrue(new Rato(mapa).acharSaida('j', mapa.getxRato(), mapa.getyRato()));
-
     }
 
     @Test
