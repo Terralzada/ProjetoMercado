@@ -5,7 +5,7 @@ public class Labirinto {
 
     //Atributos
     private int parede , entrada, saida;
-    private int x, y, nParedes, xRato, yRato;
+    private int x, y, nParedes, xRato, yRato, xEntrada, yEntrada, xSaida, ySaida;
     private int mapa[][];
     private Random rand;
 
@@ -30,6 +30,8 @@ public class Labirinto {
         //definicao da saida
         randomizar();
         mapa[x][y] = saida;
+        xSaida = x;
+        ySaida = y;
 
         //definicao da entrada
         while(mapa[x][y] == saida){
@@ -37,6 +39,8 @@ public class Labirinto {
         }
 
         mapa[x][y] = entrada;
+        xEntrada = x;
+        yEntrada = y;
         xRato = x;
         yRato = y;
 
@@ -52,7 +56,7 @@ public class Labirinto {
 
     public boolean gerarParedes(){
         randomizar();
-        if (nParedes > 120) {
+        if (nParedes > 119) {
             return true;
         }else if(mapa[x][y] == parede){
             gerarParedes();
@@ -106,6 +110,16 @@ public class Labirinto {
     public int getX(){ return x;}
 
     public int getY(){ return y;}
+
+    public int getnParedes(){ return nParedes;}
+
+    public int getxEntrada() {return xEntrada;}
+
+    public int getyEntrada() {return yEntrada;}
+
+    public int getxSaida() {return xSaida;}
+
+    public int getySaida() {return ySaida;}
 
 
 }
