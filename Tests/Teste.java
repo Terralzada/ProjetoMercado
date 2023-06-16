@@ -2,6 +2,7 @@ package Tests;
 
 import Source.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,5 +34,11 @@ public class Teste {
         assertEquals(120, mapa.getnParedes());
     }
 
+    @Test
+    public void testeEncontrarSaida() {
+        Labirinto mapa = new Labirinto();
+        Rato rato = new Rato(mapa);
+        assertTrue(new Rato(mapa).acharSaida('j', mapa.getxRato(), mapa.getyRato()));
 
+    }
 }
