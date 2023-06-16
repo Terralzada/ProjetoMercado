@@ -5,6 +5,8 @@ import Source.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Teste {
@@ -40,5 +42,17 @@ public class Teste {
         Rato rato = new Rato(mapa);
         assertTrue(new Rato(mapa).acharSaida('j', mapa.getxRato(), mapa.getyRato()));
 
+    }
+
+    @Test
+    public void  TesteGerarCaminho(){
+        Labirinto mapa = new Labirinto();
+        int mapaTeste[][] = new int[20][20];
+
+        for (int[] linha : mapaTeste)
+            Arrays.fill(linha, 0);
+
+        mapa.gerarCaminho();
+        assertArrayEquals(mapa.getMapa(),mapaTeste);
     }
 }
