@@ -1,19 +1,21 @@
 package Source;
 
 import java.util.Random;
+import java.util.Stack;
+
 public class Labirinto {
 
     //Atributos
-    private int parede , entrada, saida;
+    private String parede , entrada, saida;
     private int x, y, nParedes, xRato, yRato, xEntrada, yEntrada, xSaida, ySaida;
-    private int mapa[][];
+    private String[][] mapa;
     private Random rand;
 
     //construtor
     public Labirinto(){
-        parede = 1;
-        entrada = 3;
-        saida = 5;
+        parede = "P";
+        entrada = "E";
+        saida = "S";
         rand = new Random();
         x = 0;
         y = 0;
@@ -76,11 +78,11 @@ public class Labirinto {
     }
 
     public void gerarCaminho(){
-        mapa = new int[20][20];
+        mapa = new String[20][20];
 
         for (int colunas = 0; colunas < 20; colunas++) {
             for (int linhas = 0; linhas < 20; linhas++) {
-                mapa[colunas][linhas] = 0;
+                mapa[colunas][linhas] = ".";
 
             }
         }
@@ -103,7 +105,7 @@ public class Labirinto {
         return yRato;
     }
 
-    public int[][] getMapa() {
+    public String[][] getMapa() {
         return mapa;
     }
 

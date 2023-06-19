@@ -12,12 +12,12 @@ public class Teste {
 
     @Test
     public void testeCriarMapa() {
-        int mapa_matrix[][];
+        String mapa_matrix[][];
         Labirinto mapa = new Labirinto();
         mapa.criarMapa();
         mapa_matrix = mapa.getMapa();
-        assertEquals(3, mapa_matrix[mapa.getxEntrada()][mapa.getyEntrada()]);
-        assertEquals(5, mapa_matrix[mapa.getxSaida()][mapa.getySaida()]);
+        assertEquals("E", mapa_matrix[mapa.getxEntrada()][mapa.getyEntrada()]);
+        assertEquals("S", mapa_matrix[mapa.getxSaida()][mapa.getySaida()]);
     }
 
     @Test
