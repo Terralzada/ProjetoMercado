@@ -21,7 +21,7 @@ public class Teste {
     }
 
     @Test
-    public void TesteRandomizar() {
+    public void testeRandomizar() {
         Labirinto mapa = new Labirinto();
         mapa.randomizar();
         assertTrue(mapa.getX() < 21 && mapa.getX() > -1, "Latitude dentro do range de (0,20) x: " + mapa.getX());
@@ -32,7 +32,6 @@ public class Teste {
     public void testeGerarParedes() {
         Labirinto mapa = new Labirinto();
         assertTrue(mapa.gerarParedes(), "Paredes sendo geradas com sucesso!");
-        assertEquals(120, mapa.getnParedes());
     }
 
     @Test
@@ -44,14 +43,41 @@ public class Teste {
     }
 
     @Test
-    public void  TesteGerarCaminho(){
+    public void  testeGerarCaminho(){
         Labirinto mapa = new Labirinto();
-        int mapaTeste[][] = new int[20][20];
+        String mapaTeste[][] = new String[20][20];
 
-        for (int[] linha : mapaTeste)
-            Arrays.fill(linha, 0);
+        for (String[] linha : mapaTeste)
+            Arrays.fill(linha, ".");
 
         mapa.gerarCaminho();
         assertArrayEquals(mapa.getMapa(),mapaTeste);
+    }
+
+    @Test
+    public void testeGetXYRato(){
+        Labirinto mapa = new Labirinto();
+        assertTrue(mapa.getxRato() < 21 && mapa.getxRato() > -1, "Latitude dentro do range de (0,20) x: " + mapa.getxRato());
+        assertTrue(mapa.getyRato() < 21 && mapa.getyRato() > -1, "Longitude dentro do range de (0,20) y: " + mapa.getyRato());
+    }
+
+    @Test
+    public  void testeNParedes(){
+        Labirinto mapa = new Labirinto();
+        assertEquals(120,mapa.getnParedes());
+    }
+
+    @Test
+    public void testeGetXYEntrada(){
+        Labirinto mapa = new Labirinto();
+        assertTrue(mapa.getxEntrada() < 21 && mapa.getxEntrada() > -1, "Latitude dentro do range de (0,20) x: " + mapa.getxEntrada());
+        assertTrue(mapa.getyEntrada() < 21 && mapa.getyEntrada() > -1, "Longitude dentro do range de (0,20) y: " + mapa.getyEntrada());
+    }
+
+    @Test
+    public void testeGetXYSaida(){
+        Labirinto mapa = new Labirinto();
+        assertTrue(mapa.getxSaida() < 21 && mapa.getxSaida() > -1, "Latitude dentro do range de (0,20) x: " + mapa.getxSaida());
+        assertTrue(mapa.getySaida() < 21 && mapa.getySaida() > -1, "Longitude dentro do range de (0,20) y: " + mapa.getySaida());
     }
 }
